@@ -18,10 +18,18 @@ class Slider {
     console.log(this.width, this.height, this.count);
   }
 }
-const slider = new Slider(600, 400, 5),
-      someSlider = new Slider(300, 450, 10);
+
+class AutoSlider extends Slider {
+  constructor(width, height, count, auto) {
+    super(width, height, count)
+    this.auto = auto;
+  }
+  play() {
+    console.log(`Autoplay: ${this.auto}`);
+  }
+}
+
+const slider = new AutoSlider(500, 500, 4, true);
 slider.whoAmI();
-someSlider.whoAmI();
-
-
+slider.play();
 
